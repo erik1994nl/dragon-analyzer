@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "Dragon Analyzer",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/dragon-analyzer/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
