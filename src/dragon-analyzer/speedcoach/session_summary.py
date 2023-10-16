@@ -59,7 +59,7 @@ class SessionSummary:
 SESSION_SUMMARY_FIELDNAMES = list(SessionSummary.__dataclass_fields__.keys())
 
 
-def parse_session_summary(speed_file: TextIOWrapper):
+def parse_session_summary(speed_file: TextIOWrapper) -> Mapping[str, str]:
     for _ in range(3):
         speed_file.readline()
 

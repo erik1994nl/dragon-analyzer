@@ -59,7 +59,7 @@ class IntervalSummaries:
 INTERVAL_SUMMARY_FIELDNAMES = list(IntervalSummaries.__dataclass_fields__.keys())
 
 
-def parse_interval_summaries(speed_file: TextIOWrapper):
+def parse_interval_summaries(speed_file: TextIOWrapper) -> Mapping[str, str]:
     for _ in range(3):
         speed_file.readline()
 

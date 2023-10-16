@@ -73,7 +73,7 @@ class PerStrokeData:
 PER_STROKE_DATA_FIELDNAMES = list(PerStrokeData.__dataclass_fields__.keys())
 
 
-def parse_per_stroke_data(speed_file: TextIOWrapper):
+def parse_per_stroke_data(speed_file: TextIOWrapper) -> Mapping[str, str]:
     for _ in range(3):
         speed_file.readline()
 
