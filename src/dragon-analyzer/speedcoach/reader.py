@@ -30,6 +30,7 @@ class SpeedData:
 
 
 def read_data() -> SpeedData:
+    "Read Speedcoach data"
     with open(SPEED_DATA_PATH) as speed_file:
         while True:
             speed_row_peek = speed_file.readline()
@@ -56,6 +57,7 @@ class SpeedDataDataFrame:
 
 
 def read_data_data_frame() -> SpeedDataDataFrame:
+    """Read Speedcoach data in Pandas DataFrame format"""
     with open(SPEED_DATA_PATH) as speed_file:
         speed_data = speed_file.readlines()
         data_index = data_sections(speed_data)

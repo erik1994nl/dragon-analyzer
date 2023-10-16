@@ -10,27 +10,6 @@ import pandas as pd
 from utils import to_timedelta
 
 
-PER_STROKE_DATA_FIELDNAMES = [
-    "interval",
-    "distance",
-    "distance_imp",
-    "elapsed_time",
-    "split",
-    "speed",
-    "split_imp",
-    "speed_imp",
-    "stroke_rate",
-    "strokes",
-    "distance_per_stroke",
-    "distance_per_stroke_imp",
-    "heart_rate",
-    "cal_per_hour",
-    "total_cals",
-    "gps_lat",
-    "gps_lon",
-]
-
-
 @dataclass
 class PerStrokeData:
     interval: list[int]
@@ -89,6 +68,9 @@ class PerStrokeData:
             gps_lat=[float(gps_lat) for gps_lat in d["gps_lat"]],
             gps_lon=[float(gps_lon) for gps_lon in d["gps_lon"]],
         )
+
+
+PER_STROKE_DATA_FIELDNAMES = list(PerStrokeData.__dataclass_fields__.keys())
 
 
 def parse_per_stroke_data(speed_file: TextIOWrapper):

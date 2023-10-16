@@ -8,26 +8,6 @@ import pandas as pd
 
 from utils import to_timedelta
 
-SESSION_SUMMARY_FIELDNAMES = [
-    "intervals",
-    "distance",
-    "distance_imp",
-    "total_elapsed_time",
-    "avg_split",
-    "avg_speed",
-    "avg_split_imp",
-    "avg_speed_imp",
-    "avg_stroke_rate",
-    "total_strokes",
-    "distance_per_stroke",
-    "distance_per_stroke_imp",
-    "avg_heart_rate",
-    "avg_cal_per_hr",
-    "total_cals",
-    "start_gps_lat",
-    "start_gps_lon",
-]
-
 
 @dataclass
 class SessionSummary:
@@ -74,6 +54,9 @@ class SessionSummary:
             start_gps_lat=float(d["start_gps_lat"]),
             start_gps_lon=float(d["start_gps_lon"]),
         )
+
+
+SESSION_SUMMARY_FIELDNAMES = list(SessionSummary.__dataclass_fields__.keys())
 
 
 def parse_session_summary(speed_file: TextIOWrapper):
