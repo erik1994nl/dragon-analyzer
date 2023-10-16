@@ -10,6 +10,7 @@ packages = [{ include = "dragon-analyzer", from = "src"}]
 [tool.poetry.dependencies]
 python = "~3.11"
 pandas = "^2.1.1"
+matplotlib = "^3.8.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.292"
