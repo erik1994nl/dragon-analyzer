@@ -11,6 +11,8 @@ packages = [{ include = "dragon-analyzer", from = "src"}]
 python = "~3.11"
 pandas = "^2.1.1"
 matplotlib = "^3.8.0"
+svgpathtools = "^1.6.1"
+svgpath2mpl = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.292"
