@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 
 def plot_speed_data(speed_data: SpeedData) -> None:
     fig, axs = plt.subplots(2, 2)
-    animate_route(speed_data, fig, axs[0, 0])
+    plot_0_0 = animate_route(speed_data, fig, axs[0, 0])
 
-    line_plot(
+    plot_1_0 = line_plot(
         fig=fig,
         ax=axs[1, 0],
         x=speed_data.per_stroke_data.strokes,
@@ -16,7 +16,7 @@ def plot_speed_data(speed_data: SpeedData) -> None:
         title="Speed (km/h)",
         animated=True,
     )
-    line_plot(
+    plot_0_1 = line_plot(
         fig=fig,
         ax=axs[0, 1],
         x=[t.seconds for t in speed_data.per_stroke_data.elapsed_time],
@@ -24,7 +24,7 @@ def plot_speed_data(speed_data: SpeedData) -> None:
         title="Stroke rate",
         animated=True,
     )
-    line_plot(
+    plot_1_1 = line_plot(
         fig=fig,
         ax=axs[1, 1],
         x=[t.seconds for t in speed_data.per_stroke_data.elapsed_time],
