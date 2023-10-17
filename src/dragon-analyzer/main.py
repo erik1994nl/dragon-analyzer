@@ -1,5 +1,4 @@
 from plot import plot_speed_data
-from route_animation import animate_route
 
 from speedcoach.reader import read_data, read_data_data_frame
 
