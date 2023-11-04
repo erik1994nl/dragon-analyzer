@@ -4,9 +4,11 @@
             "name": "Dragon Analyzer",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/src/dragon-analyzer/main.py",
-            "console": "integratedTerminal",
-            "justMyCode": true
-        }
+            "module": "gunicorn",
+            "args": ["--reload"],
+            // "program": "${workspaceFolder}/src/dragon_analyzer/main.py",
+            // "console": "integratedTerminal",
+            // "justMyCode": true
+        },
     ]
 }

@@ -1,5 +1,5 @@
 run:
-	poetry run python src/dragon-analyzer/main.py
+	poetry run gunicorn --reload
 
 format:
 	black src

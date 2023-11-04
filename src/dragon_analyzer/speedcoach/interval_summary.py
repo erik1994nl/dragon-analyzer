@@ -6,11 +6,11 @@ from io import StringIO, TextIOWrapper
 
 import pandas as pd
 
-from utils import to_timedelta
+from dragon_analyzer.utils import to_timedelta
 
 
 @dataclass
-class IntervalSummaries:
+class IntervalSummary:
     interval: int
     total_distance: float
     total_distance_imp: float
@@ -30,12 +30,12 @@ class IntervalSummaries:
     start_gps_lon: float
 
     @staticmethod
-    def from_data(d: Mapping[str, str]) -> "IntervalSummaries":
+    def from_data(d: Mapping[str, str]) -> "IntervalSummary":
         total_elapsed_time_t = datetime.strptime(d["total_elapsed_time"], "%H:%M:%S.%f")
         avg_split_t = datetime.strptime(d["avg_split"], "%H:%M:%S.%f")
         avg_split_imp_t = datetime.strptime(d["avg_split_imp"], "%H:%M:%S.%f")
 
-        return IntervalSummaries(
+        return IntervalSummary(
             interval=int(d["interval"]),
             total_distance=float(d["total_distance"]),
             total_distance_imp=float(d["total_distance_imp"]),
@@ -56,10 +56,10 @@ class IntervalSummaries:
         )
 
 
-INTERVAL_SUMMARY_FIELDNAMES = list(IntervalSummaries.__dataclass_fields__.keys())
+INTERVAL_SUMMARY_FIELDNAMES = list(IntervalSummary.__dataclass_fields__.keys())
 
 
-def parse_interval_summaries(speed_file: TextIOWrapper) -> Mapping[str, str]:
+def parse_interval_summary(speed_file: TextIOWrapper) -> Mapping[str, str]:
     for _ in range(3):
         speed_file.readline()
 
@@ -69,7 +69,7 @@ def parse_interval_summaries(speed_file: TextIOWrapper) -> Mapping[str, str]:
     return next(speed_dict_reader)
 
 
-def parse_interval_summaries_df(speed_data: list[str], start: int, end: int):
+def parse_interval_summary_df(speed_data: list[str], start: int, end: int):
     content = "\n".join(speed_data[start:end])
     return pd.read_csv(
         StringIO(content), header=None, names=INTERVAL_SUMMARY_FIELDNAMES

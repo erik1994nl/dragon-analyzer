@@ -1,3 +1,3 @@
 {
-    "python.analysis.extraPaths": ["./src/dragon-analyzer"]
+    "python.analysis.extraPaths": ["./src/dragon_analyzer"]
 }

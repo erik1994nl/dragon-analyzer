@@ -6,7 +6,7 @@ from io import StringIO, TextIOWrapper
 
 import pandas as pd
 
-from utils import to_timedelta
+from dragon_analyzer.utils import to_timedelta
 
 
 @dataclass
