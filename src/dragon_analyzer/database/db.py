@@ -9,8 +9,8 @@ PROJECT_ID = "magnetic-lore-403609"
 REGION = "europe-west4"
 INSTANCE_NAME = "dragon-data"
 INSTANCE_CONNECTION_NAME = f"{PROJECT_ID}:{REGION}:{INSTANCE_NAME}"
-DB_USER = "root"
-DB_PASS = "C$ca7radragondata"
+DB_USER = "dragon-user"
+DB_PASS = "dragon-password"
 DB_NAME = "dragon_database"
 
 connector = Connector()
