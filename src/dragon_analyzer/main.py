@@ -34,6 +34,7 @@ def post_clean_and_init_db_tables():
 
 @app.get("/api/speed-data")
 def get_session_summary():
+    print("GETTING FOR DRAGON USER!")
     with session_from_env() as db_session:
         return get_session_summary_data(db_session)
 
